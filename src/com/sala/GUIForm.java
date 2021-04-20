@@ -3,6 +3,8 @@ package com.sala;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class GUIForm {
     private JPanel panel;
@@ -38,7 +40,54 @@ public class GUIForm {
                 getTextField1().setText(getTextField1().getText() + "2");
 
         });
+        getA3Button().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "3");
+        });
+        getA4Button().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "4");
+        });
+        getA5Button().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "5");
+        });
+        getA6Button().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "6");
+        });
+        getA7Button().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "7");
+        });
+        getA8Button().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "8");
+        });
+        getA9Button().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "9");
+        });
+        getButton4().addActionListener(e -> {
+            getTextField1().setText(getTextField1().getText() + "+");
+        });
+        getButton7().addActionListener(e->{
+            getTextField1().setText(getTextField1().getText() + "-");
+        });
+        getButton11().addActionListener(e-> {
+            getTextField1().setText(getTextField1().getText() + "/");
+        });
+        getButton11().addActionListener(e-> {
+            getTextField1().setText(getTextField1().getText() + "/");
+        });
+        getButton13().addActionListener(e-> {
+            getTextField1().setText(getTextField1().getText() + ".");
+        });
+        getcButton().addActionListener(e-> {
+            getTextField1().setText("");
+        });
 
+
+        panel.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+//                super.keyReleased(e);
+                getTextField1().setText(getTextField1().getText()+e.getKeyChar());
+            }
+        });
     }
 
     public JPanel getJPanel(){

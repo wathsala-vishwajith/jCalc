@@ -12,6 +12,7 @@ public class Main {
         frame.setContentPane(new GUIForm().getJPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setResizable(false);
         frame.setVisible(true);
 
 //        form.getA0Button().addActionListener(new ActionListener() {
