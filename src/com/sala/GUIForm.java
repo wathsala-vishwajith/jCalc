@@ -3,6 +3,7 @@ package com.sala;
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import org.mariuszgromada.math.mxparser.*;
 
 public class GUIForm {
     private JPanel panel;
@@ -48,14 +49,19 @@ public class GUIForm {
         getButton13().addActionListener(e-> getTextField1().setText(getTextField1().getText() + "."));
         getcButton().addActionListener(e-> getTextField1().setText(""));
 
+        getButton15().addActionListener(e -> {
+            Expression e1 = new Expression(getTextField1().getText());
+            getTextField1().setText(String.valueOf(e1.calculate()));
+        });
 
-        panel.addKeyListener(new KeyAdapter() {
+        getJPanel().addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
 //                super.keyReleased(e);
                 getTextField1().setText(getTextField1().getText()+e.getKeyChar());
             }
         });
+
     }
 
     public JPanel getJPanel(){
